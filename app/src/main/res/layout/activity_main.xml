@@ -1,19 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/background_light"
     tools:context=".MainActivity">
 
+    <!-- Título con nombre y apellido -->
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="📱 Joan Sebastian Mejia Moreno"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/text_primary"
+        android:padding="16dp"
+        android:background="@color/surface_blue"
+        android:layout_marginBottom="24dp"
+        android:elevation="4dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Título de la sección -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🧮 Calculadora de Operaciones"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Campo para el primer número -->
+    <EditText
+        android:id="@+id/etNumero1"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="🔢 Ingrese el primer número"
+        android:inputType="numberDecimal|numberSigned"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/edittext_style"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/light_blue"
+        android:elevation="2dp" />
+
+    <!-- Campo para el segundo número -->
+    <EditText
+        android:id="@+id/etNumero2"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="🔢 Ingrese el segundo número"
+        android:inputType="numberDecimal|numberSigned"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/edittext_style"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/text_primary"
+        android:textColorHint="@color/light_blue"
+        android:elevation="2dp" />
+
+    <!-- Botones para las operaciones -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+        <Button
+            android:id="@+id/btnMultiplicar"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:text="✖️ Multiplicar"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/button_blue_style"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:elevation="4dp" />
+
+        <Button
+            android:id="@+id/btnDividir"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:text="➗ Dividir"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/button_green_style"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:elevation="4dp" />
+
+    </LinearLayout>
+
+    <!-- TextView para mostrar el resultado -->
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📊 Resultado: Esperando operación..."
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="20dp"
+        android:background="@drawable/result_background"
+        android:textColor="@color/white"
+        android:minHeight="80dp"
+        android:elevation="6dp" />
+
+    <!-- Información adicional -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="💡 Ingresa dos números y selecciona una operación"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="@color/text_secondary"
+        android:layout_marginTop="16dp"
+        android:alpha="0.8" />
+
+</LinearLayout>
