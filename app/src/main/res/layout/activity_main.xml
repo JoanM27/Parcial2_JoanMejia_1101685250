@@ -69,34 +69,77 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_marginBottom="24dp">
 
-        <Button
-            android:id="@+id/btnMultiplicar"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_weight="1"
-            android:text="✖️ Multiplicar"
-            android:layout_marginEnd="12dp"
-            android:background="@drawable/button_blue_style"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:elevation="4dp" />
+        <!-- Primera fila: Suma y Resta -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
 
-        <Button
-            android:id="@+id/btnDividir"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_weight="1"
-            android:text="➗ Dividir"
-            android:layout_marginStart="12dp"
-            android:background="@drawable/button_green_style"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:elevation="4dp" />
+            <Button
+                android:id="@+id/btnSumar"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="➕ Sumar"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/button_green_style"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/btnRestar"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="➖ Restar"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/button_blue_style"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:elevation="4dp" />
+
+        </LinearLayout>
+
+        <!-- Segunda fila: Multiplicación y División -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnMultiplicar"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="✖️ Multiplicar"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/button_blue_style"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:elevation="4dp" />
+
+            <Button
+                android:id="@+id/btnDividir"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="➗ Dividir"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/button_green_style"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:elevation="4dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Declaración de variables para los elementos de la interfaz
     private EditText etNumero1, etNumero2;
-    private Button btnMultiplicar, btnDividir;
+    private Button btnSumar, btnRestar, btnMultiplicar, btnDividir;
     private TextView tvResultado;
 
     @Override
@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     private void inicializarComponentes() {
         etNumero1 = findViewById(R.id.etNumero1);
         etNumero2 = findViewById(R.id.etNumero2);
+        btnSumar = findViewById(R.id.btnSumar);
+        btnRestar = findViewById(R.id.btnRestar);
         btnMultiplicar = findViewById(R.id.btnMultiplicar);
         btnDividir = findViewById(R.id.btnDividir);
         tvResultado = findViewById(R.id.tvResultado);
@@ -53,6 +55,22 @@ public class MainActivity extends AppCompatActivity {
      * Método para configurar los eventos de los botones
      */
     private void configurarEventos() {
+        // Evento para el botón sumar
+        btnSumar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                realizarSuma();
+            }
+        });
+
+        // Evento para el botón restar
+        btnRestar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                realizarResta();
+            }
+        });
+
         // Evento para el botón multiplicar
         btnMultiplicar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +86,36 @@ public class MainActivity extends AppCompatActivity {
                 realizarDivision();
             }
         });
+    }
+
+    /**
+     * Método para realizar la operación de suma
+     */
+    private void realizarSuma() {
+        try {
+            double numero1 = obtenerNumero(etNumero1);
+            double numero2 = obtenerNumero(etNumero2);
+
+            double resultado = numero1 + numero2;
+            mostrarResultado("Suma: " + numero1 + " + " + numero2 + " = " + resultado);
+        } catch (NumberFormatException e) {
+            mostrarError("Por favor ingrese números válidos");
+        }
+    }
+
+    /**
+     * Método para realizar la operación de resta
+     */
+    private void realizarResta() {
+        try {
+            double numero1 = obtenerNumero(etNumero1);
+            double numero2 = obtenerNumero(etNumero2);
+
+            double resultado = numero1 - numero2;
+            mostrarResultado("Resta: " + numero1 + " - " + numero2 + " = " + resultado);
+        } catch (NumberFormatException e) {
+            mostrarError("Por favor ingrese números válidos");
+        }
     }
 
     /**
